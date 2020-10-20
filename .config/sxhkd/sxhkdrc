@@ -7,8 +7,8 @@ super + Return
 	termite
 
 # program launcher
-super + @space
-	dmenu_run
+super + space ; f
+	firefox
 
 # make sxhkd reload its configuration files:
 super + Escape
