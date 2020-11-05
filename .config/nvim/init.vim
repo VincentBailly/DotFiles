@@ -3,7 +3,7 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'phanviet/vim-monokai-pro'
+Plug 'rakr/vim-one'
 
 call plug#end()
 
@@ -70,7 +70,7 @@ endfunction
 
 
 " Set the theme
-colorscheme monokai_pro
+colorscheme one
 set termguicolors
 set background=dark
 " hi Normal guibg=NONE ctermbg=NONE
