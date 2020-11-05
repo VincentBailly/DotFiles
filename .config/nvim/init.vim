@@ -1,8 +1,9 @@
 call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'kyoz/purify', { 'rtp': 'vim' }
-Plug 'leafgarland/typescript-vim'
+Plug 'othree/yajs.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'phanviet/vim-monokai-pro'
 
 call plug#end()
 
@@ -69,7 +70,7 @@ endfunction
 
 
 " Set the theme
-colorscheme purify
+colorscheme monokai_pro
 set termguicolors
 set background=dark
 " hi Normal guibg=NONE ctermbg=NONE
