@@ -1,4 +1,6 @@
 #! /bin/sh
+picom &
+yabar &
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 

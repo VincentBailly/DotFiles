@@ -4,6 +4,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rakr/vim-one'
+Plug 'kovetskiy/sxhkd-vim'
 
 call plug#end()
 
