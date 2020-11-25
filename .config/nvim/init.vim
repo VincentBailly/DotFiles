@@ -1,14 +1,13 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ianks/vim-tsx'
-Plug 'joshdick/onedark.vim'
 
-Plug 'leafgarland/typescript-vim'
+Plug 'othree/yajs.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'rakr/vim-one'
+Plug 'kovetskiy/sxhkd-vim'
 
 call plug#end()
-
-colorscheme onedark
 
 " coc settings
 set nobackup
@@ -49,7 +48,14 @@ function! s:show_documentation()
   endif
 endfunction
 
-" insert spaces instead of tab
+
+" Set the theme
+colorscheme one
+set termguicolors
+set background=dark
+" hi Normal guibg=NONE ctermbg=NONE
+
+set shiftwidth=2
 set expandtab
 set shiftwidth=2
 
