@@ -7,8 +7,26 @@ super + Return
 	termite
 
 # program launcher
-super + space ; f
+super + @space ; f
 	firefox
+
+super + @space ; n
+	setxkbmap -layout no
+
+super + @space ; u
+	setxkbmap -layout us
+
+super + @space ; a
+	anki
+
+super + @space ; s
+	systemctl suspend
+
+super + @space ; x
+	xournalpp
+
+super + @space ; g
+	gimp
 
 # make sxhkd reload its configuration files:
 super + Escape

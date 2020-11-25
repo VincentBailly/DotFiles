@@ -1,35 +1,23 @@
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'ianks/vim-tsx'
+Plug 'joshdick/onedark.vim'
+
 Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
+colorscheme onedark
 
-" Configuration for Coc
-
-" Some servers have issues with backup files, see #649.
+" coc settings
 set nobackup
 set nowritebackup
 
+set cmdheight=2
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
+set updatetime=500
+set shortmess+=c
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -38,10 +26,6 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -60,19 +44,14 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
   else
-    execute '!' . &keywordprg . " " . expand('<cword>')
+    call CocActionAsync('doHover')
   endif
 endfunction
 
-
-" Set the theme
-colorscheme purify
-set termguicolors
-set background=dark
-" hi Normal guibg=NONE ctermbg=NONE
-
-set shiftwidth=2
+" insert spaces instead of tab
 set expandtab
+set shiftwidth=2
+
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
