@@ -131,3 +131,11 @@ super + space ; w ; m : {h,j,k,l}
 
 super + space ; w ; t
 	bspc node @parent --rotate 90; bspc node @parent/1 --rotate 270; bspc node @parent/2 --rotate 270
+
+super + u
+	if ! bspc query -N -n .sticky; then \
+	  bspc rule -a '*' -o state=floating sticky=on; termite & \
+	else bspc node $(bspc query -N -n .sticky) -g hidden ; \
+	fi ; \
+	if bspc query -N -n '.sticky.!hidden'; then bspc node -f $(bspc query -N -n .sticky) ; fi
+	
