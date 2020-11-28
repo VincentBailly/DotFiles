@@ -19,6 +19,21 @@ super + space ; b : i
 super + space ; b : d
         ~/scripts/brightness dec
 
+super + space ; n
+	setxkbmap -layout no
+
+super + space ; u
+	setxkbmap -layout us
+
+super + space ; s
+	systemctl suspend
+
+super + space ; x
+	xournalpp
+
+super + space ; g
+	gimp
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
